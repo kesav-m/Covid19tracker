@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ErrorComponent from "./ErrorComponent";
 
 export default class ErrorBoundary extends Component {
   state = {
@@ -13,7 +14,7 @@ export default class ErrorBoundary extends Component {
     const { isValid } = this.state;
     const { children } = this.props;
     if (!isValid) {
-      return <div>Error</div>;
+      return <ErrorComponent />;
     }
     return children;
   }
